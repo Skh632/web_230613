@@ -1,0 +1,199 @@
+@charset   "UTF-8";
+ 
+* {
+  margin: 0;
+  padding: 0 ;
+  list-style: none;
+  text-decoration: none;
+}
+ 
+#wrap {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+ 
+header {
+  background: mediumseagreen  ;
+  color: white;
+  padding: 20px;
+  font-weight: bold;
+  font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+.main-menu {
+  height: 0;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  background-color: rgba(252, 196, 132, 0.706);
+  transition: height .5s;
+  font-size: medium;
+  font-weight: bold;
+  font-family: 'Zen Maru Gothic', sans-serif;
+}
+ 
+.main-menu ul li {
+  text-align: center;
+}
+ 
+.main-menu ul li a {
+  color: cornsilk;
+  display: block;
+  padding: 10px 20px;
+}
+ 
+.main-menu ul li a:hover {
+  background: rgba(244, 165, 96, 0.95);
+}
+ 
+section {
+  background: #ffffff;
+  flex: 3;
+  height: 600px;
+  /* padding: 1000px; */
+}
+
+footer   {
+  background: mediumseagreen  ;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+#navBtn:checked ~ .main-menu {
+  height: 100vh;
+}
+
+#navBtn {
+  display: none;
+}
+
+label {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: block;
+  text-align: center;
+  color: #FFF;
+}
+
+.open {
+  z-index: 100;
+  width: 40px;
+  height: 40px;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
+/*humburger button*/
+
+.open::before,
+.open::after {
+  content: "";
+}
+
+.open span,
+.open::before,
+.open::after {
+  content: "";
+  position: absolute;
+  top: 19px;
+  left: 30%;
+  width: 40%;
+  border-bottom: 2px solid white;
+  transition: transform .5s;
+}
+
+.open::before {
+  transform: translateY(-8px);
+}
+
+.open::after {
+  transform: translateY(8px);
+}
+
+/*close button*/
+#navBtn:checked + .open {
+  background: sandybrown;
+}
+
+#navBtn:checked + .open span {
+  transform: scaleX(0);
+}
+
+#navBtn:checked + .open::before {
+  transform: rotate(45deg);
+}
+
+#navBtn:checked + .open::after {
+  transform: rotate(-45deg);
+}
+
+.btn1{
+  width: 159px;
+  background: url(test@2x.png) no-repeat;
+  background-size: contain;
+  height: 87px;
+
+}
+
+.btn1:hover{
+  background: url(test2@2x.png) no-repeat;
+  background-size: contain;
+}
+@media all and (min-width: 600px) {
+
+  /*.main-menu ul {
+    display: flex;
+  }
+
+  .main-menu ul li {
+    text-align: left;
+  }*/
+
+  main {
+    display: flex;
+  }
+
+  .sub-menu ul li {
+    text-align: left;
+  }
+
+}
+
+@media all and (min-width: 1025px) {
+
+  .inner {
+    width: 84%;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+}/*スマホ用*/
+ 
+/*タブレット用   600px以上〜*/
+@media all and (min-width: 600px) {
+ 
+}
+ 
+/*コンピュータ用   1025px以上〜*/
+@media all and (min-width: 1025px) {
+ 
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+@media all and (min-width: 1025px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+html {
+  font-size: 15px;
+}
